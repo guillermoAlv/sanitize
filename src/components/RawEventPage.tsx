@@ -6,6 +6,7 @@ import {
   DefaultRawEventPageProps
 } from "./plasmic/sanitize/PlasmicRawEventPage";
 import FieldContainer from "./FieldContainer"
+import EventSelector from "./EventSelector"
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -21,16 +22,23 @@ import FieldContainer from "./FieldContainer"
 // You can also stop extending from DefaultRawEventPageProps altogether and have
 // total control over the props for your component.
 interface RawEventPageProps extends DefaultRawEventPageProps {
+  backF: ()=>{}
+  nextF: ()=>{}
   event: {
     nombre_actividad: string,
     descripcion_actividad: string,
-    precio_max: BigInteger,
-    fecha_inicio: string
+    precio_max: number,
+    precio_min: number,
+    fecha_inicio: string,
+    fecha_fin: string,
+    formatted_address: string,
+    imagen_destacada: string,
+    url_fuente: string,
+    categorias: string
   }
 }
 
-function RawEventPage({event, ...props}: RawEventPageProps) {
-  console.log(event)
+function RawEventPage({event, backF, nextF, ...props}: RawEventPageProps) {
   // Use PlasmicRawEventPage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -46,10 +54,14 @@ function RawEventPage({event, ...props}: RawEventPageProps) {
   // By default, we are just piping all RawEventPageProps here, but feel free
   // to do whatever works for you.
   return <PlasmicRawEventPage 
-    titleFieldContainer={<FieldContainer children={event['nombre_actividad']}/>} 
+    titleFieldContainer={<FieldContainer children={<h1> <a href={event['url_fuente']}> {event['nombre_actividad']}</a></h1>}/>} 
     descriptionFieldContainer={<FieldContainer children={event['descripcion_actividad']}/>}
-    pricesFieldContainer={<FieldContainer children={<div>Precio máximo: {event['precio_max']}</div>}/>} 
-    datesFieldContainer={<FieldContainer children={<div>Fecha inicio: {event['fecha_inicio']}</div>}/>} 
+    categoriesFieldContainer={<FieldContainer children={event['categorias']}/>}
+    pricesFieldContainer={<FieldContainer children={<div>Precio mínimo: {event['precio_max']/100} €<br/>Precio máximo: {event['precio_max']/100} €</div>}/>} 
+    datesFieldContainer={<FieldContainer children={<div>Fecha inicio: {event['fecha_inicio']}<br/>Fecha fin: {event['fecha_fin']} </div>}/>}
+    locationFieldContainer={<FieldContainer children={event['formatted_address']}/>}
+    featuredImageFieldContainer={<FieldContainer children={<img alt='featured' style={{maxWidth: "100%", maxHeight: "100%"}} src={event['imagen_destacada']}/>}/>}
+    buttonsFieldContainer={<EventSelector backFunc={backF}  forwardFunc={nextF}/>}
     {...props} />;
 }
 

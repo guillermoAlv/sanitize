@@ -73,6 +73,42 @@
           },
           "cssFilePath": "plasmic/sanitize/PlasmicFieldContainer.module.css",
           "scheme": "blackbox"
+        },
+        {
+          "id": "YdVxbdB0Md",
+          "name": "EventSelector",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicEventSelector.tsx",
+          "importSpec": {
+            "modulePath": "EventSelector.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicEventSelector.module.css",
+          "scheme": "blackbox"
+        },
+        {
+          "id": "kESr-Yy47Y",
+          "name": "BackButton",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicBackButton.tsx",
+          "importSpec": {
+            "modulePath": "BackButton.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicBackButton.module.css",
+          "scheme": "blackbox"
+        },
+        {
+          "id": "Iy4kj-ZtxO",
+          "name": "ForwardButton",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicForwardButton.tsx",
+          "importSpec": {
+            "modulePath": "ForwardButton.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicForwardButton.module.css",
+          "scheme": "blackbox"
         }
       ],
       "icons": [],
@@ -121,6 +157,16 @@
           "id": "-wgu__7I1",
           "name": "image12.png",
           "filePath": "plasmic/sanitize/images/image12Png.png"
+        },
+        {
+          "id": "raVBSfEPf",
+          "name": "back_icon.png",
+          "filePath": "plasmic/sanitize/images/backIconpng.png"
+        },
+        {
+          "id": "5y_h2I_cg",
+          "name": "forward_icon.png",
+          "filePath": "plasmic/sanitize/images/forwardIconpng.png"
         }
       ],
       "jsBundleThemes": []

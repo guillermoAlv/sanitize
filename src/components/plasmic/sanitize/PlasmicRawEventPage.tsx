@@ -29,6 +29,7 @@ import {
 } from "@plasmicapp/react-web";
 import HeaderButton from "../../HeaderButton"; // plasmic-import: TWvCE0iU4R/component
 import FieldContainer from "../../FieldContainer"; // plasmic-import: RTBbO_3qjQ/component
+import EventSelector from "../../EventSelector"; // plasmic-import: YdVxbdB0Md/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 import defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
@@ -63,12 +64,17 @@ export type PlasmicRawEventPage__OverridesType = {
   fieldDescription?: p.Flex<"div">;
   descriptionFieldContainer?: p.Flex<typeof FieldContainer>;
   fieldCategories?: p.Flex<"div">;
+  categoriesFieldContainer?: p.Flex<typeof FieldContainer>;
   fieldDates?: p.Flex<"div">;
   datesFieldContainer?: p.Flex<typeof FieldContainer>;
   fieldLocation?: p.Flex<"div">;
+  locationFieldContainer?: p.Flex<typeof FieldContainer>;
   fieldAges?: p.Flex<"div">;
   fieldPrices?: p.Flex<"div">;
   pricesFieldContainer?: p.Flex<typeof FieldContainer>;
+  buttonsFieldContainer?: p.Flex<"div">;
+  eventSelector?: p.Flex<typeof EventSelector>;
+  featuredImageFieldContainer?: p.Flex<typeof FieldContainer>;
 };
 
 export interface DefaultRawEventPageProps {
@@ -223,9 +229,11 @@ function PlasmicRawEventPage__RenderFunc(props: {
                   className={classNames(defaultcss.all, sty.fieldCategories)}
                 >
                   <FieldContainer
+                    data-plasmic-name={"categoriesFieldContainer"}
+                    data-plasmic-override={overrides.categoriesFieldContainer}
                     className={classNames(
                       "__wab_instance",
-                      sty.fieldContainer__aThYk
+                      sty.categoriesFieldContainer
                     )}
                     iconBox={
                       <img
@@ -268,9 +276,11 @@ function PlasmicRawEventPage__RenderFunc(props: {
                 className={classNames(defaultcss.all, sty.fieldLocation)}
               >
                 <FieldContainer
+                  data-plasmic-name={"locationFieldContainer"}
+                  data-plasmic-override={overrides.locationFieldContainer}
                   className={classNames(
                     "__wab_instance",
-                    sty.fieldContainer___1UVlu
+                    sty.locationFieldContainer
                   )}
                   iconBox={
                     <img
@@ -332,13 +342,25 @@ function PlasmicRawEventPage__RenderFunc(props: {
           </div>
 
           <div className={classNames(defaultcss.all, sty.box__ojgBr)}>
-            <div className={classNames(defaultcss.all, sty.box__t2Arb)} />
+            <div
+              data-plasmic-name={"buttonsFieldContainer"}
+              data-plasmic-override={overrides.buttonsFieldContainer}
+              className={classNames(defaultcss.all, sty.buttonsFieldContainer)}
+            >
+              <EventSelector
+                data-plasmic-name={"eventSelector"}
+                data-plasmic-override={overrides.eventSelector}
+                className={classNames("__wab_instance", sty.eventSelector)}
+              />
+            </div>
 
             <div className={classNames(defaultcss.all, sty.box__qrXje)}>
               <FieldContainer
+                data-plasmic-name={"featuredImageFieldContainer"}
+                data-plasmic-override={overrides.featuredImageFieldContainer}
                 className={classNames(
                   "__wab_instance",
-                  sty.fieldContainer__jqhb7
+                  sty.featuredImageFieldContainer
                 )}
                 iconBox={
                   <img
@@ -384,12 +406,17 @@ const PlasmicDescendants = {
     "fieldDescription",
     "descriptionFieldContainer",
     "fieldCategories",
+    "categoriesFieldContainer",
     "fieldDates",
     "datesFieldContainer",
     "fieldLocation",
+    "locationFieldContainer",
     "fieldAges",
     "fieldPrices",
-    "pricesFieldContainer"
+    "pricesFieldContainer",
+    "buttonsFieldContainer",
+    "eventSelector",
+    "featuredImageFieldContainer"
   ],
 
   headerFilled: ["headerFilled", "headerFilledTitle"],
@@ -398,13 +425,18 @@ const PlasmicDescendants = {
   titleFieldContainer: ["titleFieldContainer"],
   fieldDescription: ["fieldDescription", "descriptionFieldContainer"],
   descriptionFieldContainer: ["descriptionFieldContainer"],
-  fieldCategories: ["fieldCategories"],
+  fieldCategories: ["fieldCategories", "categoriesFieldContainer"],
+  categoriesFieldContainer: ["categoriesFieldContainer"],
   fieldDates: ["fieldDates", "datesFieldContainer"],
   datesFieldContainer: ["datesFieldContainer"],
-  fieldLocation: ["fieldLocation"],
+  fieldLocation: ["fieldLocation", "locationFieldContainer"],
+  locationFieldContainer: ["locationFieldContainer"],
   fieldAges: ["fieldAges"],
   fieldPrices: ["fieldPrices", "pricesFieldContainer"],
-  pricesFieldContainer: ["pricesFieldContainer"]
+  pricesFieldContainer: ["pricesFieldContainer"],
+  buttonsFieldContainer: ["buttonsFieldContainer", "eventSelector"],
+  eventSelector: ["eventSelector"],
+  featuredImageFieldContainer: ["featuredImageFieldContainer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<
@@ -419,12 +451,17 @@ type NodeDefaultElementType = {
   fieldDescription: "div";
   descriptionFieldContainer: typeof FieldContainer;
   fieldCategories: "div";
+  categoriesFieldContainer: typeof FieldContainer;
   fieldDates: "div";
   datesFieldContainer: typeof FieldContainer;
   fieldLocation: "div";
+  locationFieldContainer: typeof FieldContainer;
   fieldAges: "div";
   fieldPrices: "div";
   pricesFieldContainer: typeof FieldContainer;
+  buttonsFieldContainer: "div";
+  eventSelector: typeof EventSelector;
+  featuredImageFieldContainer: typeof FieldContainer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -492,12 +529,19 @@ export const PlasmicRawEventPage = Object.assign(
     fieldDescription: makeNodeComponent("fieldDescription"),
     descriptionFieldContainer: makeNodeComponent("descriptionFieldContainer"),
     fieldCategories: makeNodeComponent("fieldCategories"),
+    categoriesFieldContainer: makeNodeComponent("categoriesFieldContainer"),
     fieldDates: makeNodeComponent("fieldDates"),
     datesFieldContainer: makeNodeComponent("datesFieldContainer"),
     fieldLocation: makeNodeComponent("fieldLocation"),
+    locationFieldContainer: makeNodeComponent("locationFieldContainer"),
     fieldAges: makeNodeComponent("fieldAges"),
     fieldPrices: makeNodeComponent("fieldPrices"),
     pricesFieldContainer: makeNodeComponent("pricesFieldContainer"),
+    buttonsFieldContainer: makeNodeComponent("buttonsFieldContainer"),
+    eventSelector: makeNodeComponent("eventSelector"),
+    featuredImageFieldContainer: makeNodeComponent(
+      "featuredImageFieldContainer"
+    ),
 
     // Metadata about props expected for PlasmicRawEventPage
     internalVariantProps: PlasmicRawEventPage__VariantProps,
