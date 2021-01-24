@@ -5,7 +5,7 @@ import RawEventPage from './components/RawEventPage'
 
 
 function App() {
-  const [content, setContent] = useState([])
+  //const [content, setContent] = useState([])
   const [todo, setTodo] = useState({});
   const [loading, setLoading] = useState(false);
 
