@@ -1,0 +1,134 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/public/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "./src/components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+      "projectName": "Sanitize",
+      "version": "latest",
+      "cssFilePath": "plasmic/sanitize/plasmic_sanitize.module.css",
+      "components": [
+        {
+          "id": "4M9KjaViuS",
+          "name": "FieldBox",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicFieldBox.tsx",
+          "importSpec": {
+            "modulePath": "FieldBox.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicFieldBox.module.css",
+          "scheme": "blackbox"
+        },
+        {
+          "id": "6IzXktUnJx",
+          "name": "RawEventPage",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicRawEventPage.tsx",
+          "importSpec": {
+            "modulePath": "RawEventPage.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicRawEventPage.module.css",
+          "scheme": "blackbox"
+        },
+        {
+          "id": "TWvCE0iU4R",
+          "name": "HeaderButton",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicHeaderButton.tsx",
+          "importSpec": {
+            "modulePath": "HeaderButton.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicHeaderButton.module.css",
+          "scheme": "blackbox"
+        },
+        {
+          "id": "RTBbO_3qjQ",
+          "name": "FieldContainer",
+          "type": "managed",
+          "projectId": "qq2KNCVBMAFwtpXBEtzSHr",
+          "renderModuleFilePath": "plasmic/sanitize/PlasmicFieldContainer.tsx",
+          "importSpec": {
+            "modulePath": "FieldContainer.tsx"
+          },
+          "cssFilePath": "plasmic/sanitize/PlasmicFieldContainer.module.css",
+          "scheme": "blackbox"
+        }
+      ],
+      "icons": [],
+      "images": [
+        {
+          "id": "keOlHitnV",
+          "name": "title_icon.png",
+          "filePath": "plasmic/sanitize/images/titleIconpng.png"
+        },
+        {
+          "id": "ZF4Mj8Rbd",
+          "name": "description_icon.png",
+          "filePath": "plasmic/sanitize/images/descriptionIconpng.png"
+        },
+        {
+          "id": "Uyjx_JjAQ",
+          "name": "category_icon.png",
+          "filePath": "plasmic/sanitize/images/categoryIconpng.png"
+        },
+        {
+          "id": "SYLdwNPOs",
+          "name": "dates_icon.png",
+          "filePath": "plasmic/sanitize/images/datesIconpng.png"
+        },
+        {
+          "id": "JjnbSd2g7",
+          "name": "location_icon.png",
+          "filePath": "plasmic/sanitize/images/locationIconpng.png"
+        },
+        {
+          "id": "8YtcnNdxz",
+          "name": "ages_icon.png",
+          "filePath": "plasmic/sanitize/images/agesIconpng.png"
+        },
+        {
+          "id": "lnYOwTV4D",
+          "name": "prices_icon.png",
+          "filePath": "plasmic/sanitize/images/pricesIconpng.png"
+        },
+        {
+          "id": "SVpcm-uUG",
+          "name": "image10.png",
+          "filePath": "plasmic/sanitize/images/image10Png.png"
+        },
+        {
+          "id": "-wgu__7I1",
+          "name": "image12.png",
+          "filePath": "plasmic/sanitize/images/image12Png.png"
+        }
+      ],
+      "jsBundleThemes": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": []
+  },
+  "cliVersion": "0.1.94",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.94/dist/plasmic.schema.json"
+}
