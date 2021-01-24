@@ -1,20 +1,37 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RawEventPage from './components/RawEventPage'
 
 
 
 function App() {
   const [content, setContent] = useState([])
-  if (content.length === 0){
-    fetch('https://vtn44sn818.execute-api.eu-west-1.amazonaws.com/Prod/sanitize-raw').then(response => response.json()).then(data => ter(data));
-  }else{
-    console.log(content)
-  }
-  function ter(dt){
-    setContent(dt['events'])
-  }
-  return (<RawEventPage/>);
+  const [todo, setTodo] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = () => {
+    setLoading(true);
+    fetch("https://vtn44sn818.execute-api.eu-west-1.amazonaws.com/Prod/sanitize-raw")
+      .then((response) => response.json())
+      .then((data) => {
+        setTodo(data['events'][0]);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  };
+  return (
+    <>
+      {loading ? (
+        <div>...Data Loading.....</div>
+      ) : (<RawEventPage event={todo}/>)}
+    </>
+  );
 }
 
 export default App;

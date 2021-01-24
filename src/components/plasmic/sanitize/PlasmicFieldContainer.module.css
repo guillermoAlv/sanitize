@@ -13,7 +13,7 @@
   height: auto;
   flex-direction: row;
 }
-.box {
+.contentBox {
   display: block;
   position: relative;
   background-color: rgba(68, 192, 255, 0.2);

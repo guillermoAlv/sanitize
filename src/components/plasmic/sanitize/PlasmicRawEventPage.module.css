@@ -202,7 +202,7 @@
   min-width: 0;
   padding: 20px;
 }
-.fieldContainer__xMSdJ:global(.__wab_instance) {
+.titleFieldContainer:global(.__wab_instance) {
   position: relative;
   left: auto;
   top: auto;
@@ -225,7 +225,7 @@
   min-width: 0;
   padding: 20px;
 }
-.fieldContainer__lnu:global(.__wab_instance) {
+.descriptionFieldContainer:global(.__wab_instance) {
   position: relative;
 }
 .img__pl20W {
@@ -285,7 +285,7 @@
   min-height: 0;
   padding: 20px;
 }
-.fieldContainer__toDkq:global(.__wab_instance) {
+.datesFieldContainer:global(.__wab_instance) {
   position: relative;
   left: auto;
   top: auto;
@@ -357,7 +357,7 @@
   min-height: 0;
   padding: 20px;
 }
-.fieldContainer___34Wj:global(.__wab_instance) {
+.pricesFieldContainer:global(.__wab_instance) {
   position: relative;
   left: auto;
   top: auto;

@@ -40,21 +40,24 @@ export const PlasmicFieldContainer__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicFieldContainer__ArgsType = {
   iconBox?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicFieldContainer__ArgsType;
 export const PlasmicFieldContainer__ArgProps = new Array<ArgPropType>(
-  "iconBox"
+  "iconBox",
+  "children"
 );
 
 export type PlasmicFieldContainer__OverridesType = {
   root?: p.Flex<"div">;
   iconBox?: p.Flex<"div">;
-  box?: p.Flex<"div">;
+  contentBox?: p.Flex<"div">;
 };
 
 export interface DefaultFieldContainerProps {
   iconBox?: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -83,18 +86,20 @@ function PlasmicFieldContainer__RenderFunc(props: {
       </div>
 
       <div
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
-        className={classNames(defaultcss.all, sty.box)}
-      />
+        data-plasmic-name={"contentBox"}
+        data-plasmic-override={overrides.contentBox}
+        className={classNames(defaultcss.all, sty.contentBox)}
+      >
+        <p.PlasmicSlot defaultContents={null} value={args.children} />
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "iconBox", "box"],
+  root: ["root", "iconBox", "contentBox"],
   iconBox: ["iconBox"],
-  box: ["box"]
+  contentBox: ["contentBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<
@@ -103,7 +108,7 @@ type DescendantsType<
 type NodeDefaultElementType = {
   root: "div";
   iconBox: "div";
-  box: "div";
+  contentBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -165,7 +170,7 @@ export const PlasmicFieldContainer = Object.assign(
   {
     // Helper components rendering sub-elements
     iconBox: makeNodeComponent("iconBox"),
-    box: makeNodeComponent("box"),
+    contentBox: makeNodeComponent("contentBox"),
 
     // Metadata about props expected for PlasmicFieldContainer
     internalVariantProps: PlasmicFieldContainer__VariantProps,

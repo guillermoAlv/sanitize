@@ -5,6 +5,7 @@ import {
   PlasmicRawEventPage,
   DefaultRawEventPageProps
 } from "./plasmic/sanitize/PlasmicRawEventPage";
+import FieldContainer from "./FieldContainer"
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -19,9 +20,17 @@ import {
 //
 // You can also stop extending from DefaultRawEventPageProps altogether and have
 // total control over the props for your component.
-interface RawEventPageProps extends DefaultRawEventPageProps {}
+interface RawEventPageProps extends DefaultRawEventPageProps {
+  event: {
+    nombre_actividad: string,
+    descripcion_actividad: string,
+    precio_max: BigInteger,
+    fecha_inicio: string
+  }
+}
 
-function RawEventPage(props: RawEventPageProps) {
+function RawEventPage({event, ...props}: RawEventPageProps) {
+  console.log(event)
   // Use PlasmicRawEventPage to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -36,7 +45,12 @@ function RawEventPage(props: RawEventPageProps) {
   //
   // By default, we are just piping all RawEventPageProps here, but feel free
   // to do whatever works for you.
-  return <PlasmicRawEventPage {...props} />;
+  return <PlasmicRawEventPage 
+    titleFieldContainer={<FieldContainer children={event['nombre_actividad']}/>} 
+    descriptionFieldContainer={<FieldContainer children={event['descripcion_actividad']}/>}
+    pricesFieldContainer={<FieldContainer children={<div>Precio máximo: {event['precio_max']}</div>}/>} 
+    datesFieldContainer={<FieldContainer children={<div>Fecha inicio: {event['fecha_inicio']}</div>}/>} 
+    {...props} />;
 }
 
 export default RawEventPage;
